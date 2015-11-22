@@ -1,0 +1,150 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% This is a (brief) model paper using the achemso class
+%% The document class accepts keyval options, which should include
+%% the target journal and optionally the manuscript type.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[journal=jpccck,manuscript=article]{achemso}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Place any additional packages needed here.  Only include packages
+%% which are essential, to avoid problems later. Do NOT use any
+%% packages which require e-TeX (for example etoolbox): the e-TeX
+%% extensions are not currently available on the ACS conversion
+%% servers.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[version=3]{mhchem} % Formula subscripts using \ce{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% If issues arise when submitting your manuscript, you may want to
+%% un-comment the next line.  This provides information on the
+%% version of every file you have used.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%\listfiles
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Place any additional macros here.  Please use \newcommand* where
+%% possible, and avoid layout-changing macros (which are not used
+%% when typesetting).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand*\mycommand[1]{\texttt{\emph{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Meta-data block
+%% ---------------
+%% Each author should be given as a separate \author command.
+%%
+%% Corresponding authors should have an e-mail given after the author
+%% name as an \email command. Phone and fax numbers can be given
+%% using \phone and \fax, respectively; this information is optional.
+%%
+%% The affiliation of authors is given after the authors; each
+%% \affiliation command applies to all preceding authors not already
+%% assigned an affiliation.
+%%
+%% The affiliation takes an option argument for the short name.  This
+%% will typically be something like "University of Somewhere".
+%%
+%% The \altaffiliation macro should be used for new address, etc.
+%% On the other hand, \alsoaffiliation is used on a per author basis
+%% when authors are associated with multiple institutions.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{Glen Alen Ferguson}
+	\altaffiliation{Equally contributing author}
+\affiliation[NREL-1]
+	{National Bioenergy Center, %
+	 National Renewable Energy Laboratory, %
+	 15013 Denver West Parkway, Golden, CO}
+
+\author{Branden B. Kappes}
+	\altaffiliation{Equally contributing author}
+%\email{s.k.laborator@bigpharma.co}
+\affiliation[CSM]
+	{Dept. of Mechanical Engineering, %
+	Colorado School of Mines, %
+	1500 Illinois St., Golden, CO 80401}
+
+\author{James Whitaker}
+\author{Daniel Ruddy}
+\affiliation[NREL-1]
+	{National Bioenergy Center, %
+	 National Renewable Energy Laboratory, %
+	 15013 Denver West Parkway, Golden, CO}
+
+\author{Jeremy Neubauer}
+\author{Shriram Santhanagopalan}
+\email{Shriram.Santhanagopalan@nrel.gov}
+\affiliation[NREL-2]
+	{Transportation \& Hydrogen Systems, %
+	 National Renewable Energy Laboratory, %
+	 15013 Denver West Parkway, Golden, CO}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The document title should be given as usual. Some journals require
+%% a running title from the author: this should be supplied as an
+%% optional argument to \title.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title[Principles for Ab Initio Molecular Design]
+	{Ab initio design principles for property optimization of energy storage molecules: Predicting the energy density in redox reactions for small molecules}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Some journals require a list of abbreviations or keywords to be
+%% supplied. These should be set up here, and will be printed after
+%% the title and author information, if needed.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\abbreviations{}
+\keywords{DFT, Gaussian, oxidation, reduction, electrochemistry, flow battery, electrochemistry}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The manuscript does not need to include \maketitle, which is
+%% executed automatically.  The document should begin with an
+%% abstract, if appropriate.  If one is given and should not be, the
+%% contents will be gobbled.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+  TBW
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Start the main part of the manuscript here.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Introduction}\paragraph{Ab initio design}% Difficult% Prediction from direct calculations
+\paragraph{Prediction from groups of molecules}
+% Matt’s paper% Lei’s paper% Hutchinson’s papers% Kitchin’s papers% Nørskov’s papers
+\paragraph{Predicting molecular properties is difficult but important}% Correlations require large datasets of relatively inexpensive quantum calculations where the dataset is expensive to calculate% Correlations are often true on for a specific domain of chemistry but are not general
+% Properties are often a function of many variables%% Substructures %%% Number of constituents%%% Identity of constituents%%% Relative substituent positions
+
+\paragraph{Most large datasets are currently used to screen based on heuristics}% Screening can find candidates but gives no information about what improves properties% While the desired properties are usually known the mapping of calculated values is properties is often unknown and system as designed ad hoc to produce the desired data
+
+\paragraph{We have a framework for mapping molecular properties to functional groups and substructures (Fingerprints)}
+
+\paragraph{Case study: Liquid and Semi-liquid batteries}% A possible solution for grid and EV energy storage % Require molecules with precise properties%% Electrochemical window%% Low MW%% Good solubility% Properties can be difficult and expensive to measure
+\section{Computational methods}\paragraph{Creating the dataset}% Calculation of properties%% Global optimization using FF%% Quantum optimization%% Solvation energy%% Electrochemical window%% Other properties
+\paragraph{Using the dataset for screening}% Properties can be enumerated % Plotting simple properties%% Substituted values plotted against changes in properties%%% Functional groups (F, Cl, CN, CF3, CH3, t-butyl, OCH3)%%% Properties (Solvation, 1st and 2nd Redox Potentials)%%% 3D plot of all of these%% Quantification of changes due to functional group addition
+\paragraph{Infrastructure for making prediction from the dataset}% Fingerprinting of molecules in the dataset%% Conversion to bit strings% Measuring differences from a reference using bit strings%% Tanimoto% Clustering of fingerprints vs. properties (Solvation, 1st and 2nd Redox Potentials)%% K-means of 3% Classification%% Property vectors %% Bit strings for FP% Mapping substring contributions to a property
+
+\section{Results and Discussion}\paragraph{Property calculations}% Experimental theoretical correlation for redox potentials%Cite previous work% Description of property changes upon functionalization
+\paragraph{Solvation}% Changes%% Number of constituents%% Identity of constituents%% Relative substituent positions% Quantitative model of the effect of functionalization on solvation
+
+\paragraph{Redox potentials}% Changes based on the %% Number of constituents%% Identity of constituents%% Relative substituent positions% Quantitative model of the effect of functionalization on redox potentials% How to improve anodes and cathodes
+\section{Conclusions}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The "Acknowledgement" section can be given in all manuscript
+%% classes.  This should be given within the "acknowledgement"
+%% environment, which will make the correct section or running title.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{acknowledgement}
+
+The authors thank NEXUS, the National Renewable Energy Laboratory's high-performance computing center, for providing computational resources. Funding through the Defense Advanced Research Project Agency Grant No. 1234-56789 is gratefully acknowledged.
+
+\end{acknowledgement}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% The appropriate \bibliography command should be placed here.
+%% Notice that the class file automatically sets \bibliographystyle
+%% and also names the section correctly.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\bibliography{achemso-demo}
+
+\end{document}
